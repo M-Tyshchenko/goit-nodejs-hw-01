@@ -7,10 +7,6 @@ const {
   addContact,
 } = require("./contacts");
 
-// listContacts()
-//   .then((data) => console.log(data))
-//   .catch((err) => console.error(err));
-
 program
   .option("-a, --action <action>", "choose action")
   .option("-i, --id <id>", "contact id")
