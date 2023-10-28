@@ -12,14 +12,13 @@ async function readContacts() {
 function writeContacts(contacts) {
   return fs.writeFile(contactsPath, JSON.stringify(contacts, undefined, 2));
 }
-// TODO: задокументувати кожну функцію
+
 async function listContacts() {
   const contacts = await readContacts();
   return contacts;
 }
 
 async function getContactById(contactId) {
-  // ...твій код. Повертає об'єкт контакту з таким id. Повертає null, якщо контакт з таким id не знайдений.
   const contacts = await readContacts();
   const contact = contacts.find((contact) => contact.id === contactId);
   if (contact === undefined) {
@@ -29,7 +28,6 @@ async function getContactById(contactId) {
 }
 
 async function removeContact(contactId) {
-  // ...твій код. Повертає об'єкт видаленого контакту. Повертає null, якщо контакт з таким id не знайдений.
   const contacts = await readContacts();
 
   const index = contacts.findIndex((contact) => contact.id === contactId);
@@ -46,7 +44,6 @@ async function removeContact(contactId) {
 }
 
 async function addContact(name, email, phone) {
-  // ...твій код. Повертає об'єкт доданого контакту.
   const contacts = await readContacts();
   const newContact = { id: crypto.randomUUID(), name, email, phone };
 
